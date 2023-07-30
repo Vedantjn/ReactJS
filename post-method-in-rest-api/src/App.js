@@ -5,6 +5,7 @@ function App() {
   useEffect(()=>{
     getList()
   },[])
+  console.warn(users)
     function getList(){
       fetch("http://localhost:4000/todo").then((result)=>{
       result.json().then((resp)=>{
@@ -13,7 +14,6 @@ function App() {
       })
     })
     }
-  console.warn(users)
 
   function deleteUser(id){
     fetch(`http://localhost:4000/todo/${id}`, {
